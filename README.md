@@ -36,7 +36,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 $ git clone https://github.com/hackaTUM-2022/farmproject.git
 
 # Go into the repository
-$ cd cd backend/
+$ cd cd frontend/
 
 # Install dependencies
 $ npm install
