@@ -3,8 +3,14 @@
 
 import motor.motor_asyncio
 from model import Todo
+import pymongo
 
-client = motor.motor_asyncio.AsyncIOMotorClient('mongodb://localhost:27017/')
+# client = motor.motor_asyncio.AsyncIOMotorClient('mongodb+srv://Admin:admin@bloombergdatadb.bhzbby6.mongodb.net/?retryWrites=true&w=majority')
+
+client = pymongo.MongoClient('mongodb+srv://Admin:admin@bloombergdatadb.bhzbby6.mongodb.net/?retryWrites=true&w=majority')
+
+db = client.test
+
 database = client.TodoList
 collection = database.todo
 
@@ -21,7 +27,7 @@ async def fetch_all_todos():
 
 async def create_todo(todo):
     document = todo
-    result = await collection.insert_one(document)
+    result = collection.insert_one(document)
     return document
 
 
