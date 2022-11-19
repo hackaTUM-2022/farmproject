@@ -51,9 +51,8 @@ $ npm start
 ```bash
 # Running FASTAPI Server
 $ uvicorn main:app  --reload --host 0.0.0.0 --port 8000
-```
 # Client side need the use http:[host_ip]:8000/api/todo
-
+```
 ## Credits
 
 This software uses the following open source packages:
