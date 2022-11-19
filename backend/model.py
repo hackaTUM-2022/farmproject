@@ -10,9 +10,25 @@ class Todo(BaseModel):
     description: str
 
 class Stock(BaseModel):
-    typ: str
+    name: str
+    qty: str
+    price: str
+    user: str
+    
+class Order(BaseModel):
     name: str
     side: str
-    qty: Decimal
-    price: Decimal
-    user: str
+    qty: str
+    price: str
+    customer: str
+    
+class Match(BaseModel):
+    buyer: str
+    seller: str
+    name: str
+    qty: str
+    price: str
+    
+class User(BaseModel):
+    username: str
+    password: str
