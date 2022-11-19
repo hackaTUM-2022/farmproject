@@ -3,14 +3,14 @@
 
 from fastapi import FastAPI, HTTPException
 
-from model import Todo
+from model import Todo, Stock
 
 from database import (
-    fetch_one_todo,
-    fetch_all_todos,
-    create_todo,
-    update_todo,
-    remove_todo,
+    fetch_one_stock,
+    fetch_all_stocks,
+    create_stock,
+    update_stock,
+    remove_stock,
 )
 
 # an HTTP-specific exception class  to generate exception information
@@ -19,7 +19,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",
+    "*",
 ]
 
 # what is a middleware? 
@@ -36,7 +36,7 @@ app.add_middleware(
 @app.get("/")
 async def read_root():
     return {"Hello": "World"}
-
+"""
 @app.get("/api/todo")
 async def get_todo():
     response = await fetch_all_todos()
@@ -69,3 +69,39 @@ async def delete_todo(title):
     if response:
         return "Successfully deleted todo"
     raise HTTPException(404, f"There is no todo with the title {title}")
+
+"""
+# For Stocks project here
+
+@app.get("/api/stock")
+async def get_stock():
+    response = await fetch_all_stocks()
+    return response
+
+@app.get("/api/stock/{name}", response_model=Stock)
+async def get_stock_by_name(name):
+    response = await fetch_one_stock(name)
+    if response:
+        return response
+    raise HTTPException(404, f"There is no todo with the title {id}")
+
+@app.post("/api/stock/", response_model=Stock)
+async def post_stock(stock: Stock):
+    response = await create_stock(stock.dict())
+    if response:
+        return response
+    raise HTTPException(400, "Something went wrong")
+
+@app.put("/api/stock/{user}/", response_model=Stock)
+async def put_user(user: str):
+    response = await update_stock(user)
+    if response:
+        return response
+    raise HTTPException(404, f"There is no todo with the title {user}")
+
+@app.delete("/api/stock/{user}")
+async def delete_user(user):
+    response = await remove_stock(user)
+    if response:
+        return "Successfully deleted todo"
+    raise HTTPException(404, f"There is no todo with the title {user}")
