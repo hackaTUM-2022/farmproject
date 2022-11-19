@@ -26,6 +26,7 @@
 ## Key Features
 * Cross platform
   - Windows, macOS and Linux ready.
+  - Modernized UI, easy to use
 
 ## How To Use
 
@@ -35,7 +36,20 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 # Clone this repository
 $ git clone https://github.com/hackaTUM-2022/farmproject.git
 
-# Go into the repository
+# Go into the backend repository
+$ cd backend/
+
+# Install the other requirements 
+$ pip install -r requirements.txt
+```
+> **Note**
+> You can use ifconfig in the command line  to get your IP
+```bash
+# Run the FastAPI Server and replace the host_ip with your IP
+$ uvicorn main:app  --reload --host 0.0.0.0 --port 8000
+# Client side need the use http:[host_ip]:8000/api/todo
+
+# Go into the frontend repository
 $ cd frontend/
 
 # Install dependencies
@@ -47,12 +61,8 @@ $ npm start
 
 > **Note**
 > If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+> If you are not familiar with npm, [see this guide](https://linuxconfig.org/install-npm-on-linux)
 
-```bash
-# Running FASTAPI Server
-$ uvicorn main:app  --reload --host 0.0.0.0 --port 8000
-# Client side need the use http:[host_ip]:8000/api/todo
-```
 ## Credits
 
 This software uses the following open source packages:
