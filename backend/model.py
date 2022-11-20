@@ -1,7 +1,3 @@
-#  @bekbrace
-#  FARMSTACK Tutorial - Sunday 13.06.2021
-
-# Pydantic allows auto creation of JSON Schemas from models
 from pydantic import BaseModel
 from decimal import *
 
@@ -22,13 +18,17 @@ class Order(BaseModel):
     price: str
     customer: str
     
+"""
 class Match(BaseModel):
     buyer: str
     seller: str
-    name: str
+    stockname: str
+    buyerStockId: str
+    sellerStockId: str
     qty: str
     price: str
-    
+"""
 class User(BaseModel):
     username: str
     password: str
+    
