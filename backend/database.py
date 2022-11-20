@@ -1,7 +1,3 @@
-#  @bekbrace
-#  FARMSTACK Tutorial - Sunday 13.06.2021
-
-# import motor.motor_asyncio
 from model import Stock, Order, User
 import pymongo
 # client = motor.motor_asyncio.AsyncIOMotorClient('mongodb+srv://Admin:admin@bloombergdatadb.bhzbby6.mongodb.net/?retryWrites=true&w=majority')
