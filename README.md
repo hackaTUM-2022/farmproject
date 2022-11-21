@@ -50,8 +50,8 @@ $ pip install -r requirements.txt
 $ uvicorn main:app  --reload --host 0.0.0.0 --port 8000
 # Client side need the use http:[host_ip]:8000/api/todo
 
-# Go into the frontend repository
-$ cd frontend/
+# Go and clone the frontend repository named dashboard
+$ https://github.com/hackaTUM-2022/dashboard.git
 
 # Install dependencies
 $ npm install
