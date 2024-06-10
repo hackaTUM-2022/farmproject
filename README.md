@@ -24,6 +24,8 @@
 <img src="https://media1.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif">
 </p>
 
+<p>Backend for HackaTUM Bloomberg using MangoDB and FastAPI</p>
+
 ## Key Features
 * Cross platform
   - Windows, macOS and Linux ready.
